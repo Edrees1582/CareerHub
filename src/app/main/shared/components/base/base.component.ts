@@ -12,6 +12,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subject, takeUntil } from 'rxjs';
 
 import { environment } from '../../../../environments/environment';
+import { Pagination } from '../../types/shared.type';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-base',
@@ -26,7 +28,15 @@ export class BaseComponent implements OnDestroy {
 
   protected darkMode = signal<boolean>(false);
   protected language = signal<string>('');
+  protected direction = computed(() =>
+    this.language() === 'ar' ? 'rtl' : 'ltr'
+  );
 
+  protected skip = signal<number>(Pagination.SKIP);
+  protected take = signal<number>(Pagination.TAKE);
+  protected totalCount = signal<number>(0);
+
+  protected execute$ = new Subject<boolean>();
   protected destroy$ = new Subject<void>();
 
   constructor() {
@@ -50,20 +60,20 @@ export class BaseComponent implements OnDestroy {
         localStorage.setItem('lang', language);
 
         this.language.set(language);
-        this.direction = language;
+        this.setDirection();
 
         this.toggleThemeClasses();
       });
   }
 
-  set direction(language: string) {
-    const dir = this.direction;
-    this.renderer.setAttribute(document.documentElement, 'lang', language);
+  setDirection() {
+    const dir = this.direction();
+    this.renderer.setAttribute(
+      document.documentElement,
+      'lang',
+      this.language()
+    );
     this.renderer.setAttribute(document.documentElement, 'dir', dir);
-  }
-
-  get direction(): string {
-    return this.language() === 'ar' ? 'rtl' : 'ltr';
   }
 
   toggleDarkMode(isDarkMode?: boolean) {
@@ -92,6 +102,13 @@ export class BaseComponent implements OnDestroy {
         document.body.classList.add('light-theme-arabic');
       else document.body.classList.add('light-theme-english');
     }
+  }
+
+  onPageChange(event: PageEvent) {
+    this.skip.set(event.pageIndex * event.pageSize);
+    this.take.set(event.pageSize);
+
+    this.execute$.next(true);
   }
 
   ngOnDestroy() {

@@ -6,6 +6,7 @@ import { Job } from '../types/job.type';
 import { PaginationSearchCriteria } from '../../../shared/types/shared.type';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { TranslateModule } from '@ngx-translate/core';
+import { takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-jobs-grid',
@@ -20,30 +21,23 @@ export class JobsGridComponent extends BaseComponent implements OnInit {
   dataSource = new MatTableDataSource<Job>();
   displayedColumns: string[] = ['title', 'location', 'company', 'salary'];
 
-  skip: number = 0;
-  take: number = 10;
-  totalCount: number = 0;
-
   ngOnInit() {
     this.getJobs();
+
+    this.execute$.pipe(takeUntil(this.destroy$)).subscribe(() => {
+      this.getJobs();
+    });
   }
 
   getJobs() {
     const criteria: PaginationSearchCriteria = {
-      skip: this.skip,
-      take: this.take,
+      skip: this.skip(),
+      take: this.take(),
     };
 
     const { jobs, totalCount } = this._jobService.getJobs(criteria);
 
     this.dataSource.data = jobs;
-    this.totalCount = totalCount;
-  }
-
-  onPageChange(event: PageEvent) {
-    this.take = event.pageSize;
-    this.skip = event.pageIndex * this.take;
-
-    this.getJobs();
+    this.totalCount.set(totalCount);
   }
 }

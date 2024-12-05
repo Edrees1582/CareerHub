@@ -62,11 +62,7 @@ import {
     ]),
   ],
 })
-export class AppComponent extends BaseComponent {
-  constructor() {
-    super();
-  }
-
+export class AppComponent {
   @HostBinding('@.disabled')
   public animationsDisabled = false;
 
