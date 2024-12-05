@@ -1,0 +1,11 @@
+@use "@angular/material" as mat;
+@use "./theme" as theme;
+
+@include mat.core();
+
+:root {
+  --primary-color: mat.get-color-from-palette(
+    theme.$light-theme-arabic,
+    primary
+  );
+}

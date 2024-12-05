@@ -1,0 +1,35 @@
+{
+  "general": {
+    "greeting": "Hello",
+    "farewell": "Goodbye",
+    "thankYou": "Thank you",
+    "welcome": "Welcome",
+    "error": "An error occurred"
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "jobs": "Jobs",
+    "notFound": {
+      "title": "Page not found",
+      "message": "The page you are looking for does not exist"
+    }
+  },
+  "messages": {
+    "loading": "Loading...",
+    "success": "Operation successful",
+    "failure": "Operation failed"
+  },
+  "translation": {
+    "language": "العربية",
+    "name": "nameEn"
+  },
+  "pages": {
+    "jobs": {
+      "title": "Title",
+      "location": "Location",
+      "company": "Company",
+      "salary": "Salary"
+    }
+  }
+}

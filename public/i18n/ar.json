@@ -1,0 +1,35 @@
+{
+  "general": {
+    "greeting": "مرحبا",
+    "farewell": "وداعا",
+    "thankYou": "شكرا",
+    "welcome": "أهلا وسهلا",
+    "error": "حدث خطأ"
+  },
+  "navigation": {
+    "home": "الصفحة الرئيسية",
+    "about": "معلومات عنا",
+    "jobs": "الوظائف",
+    "notFound": {
+      "title": "الصفحة غير موجودة",
+      "message": "الصفحة التي تبحث عنها غير موجودة"
+    }
+  },
+  "messages": {
+    "loading": "جار التحميل...",
+    "success": "تمت العملية بنجاح",
+    "failure": "فشلت العملية"
+  },
+  "translation": {
+    "language": "English",
+    "name": "nameAr"
+  },
+  "pages": {
+    "jobs": {
+      "title": "العنوان",
+      "location": "الموقع",
+      "company": "الشركة",
+      "salary": "الراتب"
+    }
+  }
+}

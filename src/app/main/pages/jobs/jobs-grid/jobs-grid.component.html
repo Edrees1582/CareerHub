@@ -1,0 +1,48 @@
+<div>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="title">
+      <mat-header-cell *matHeaderCellDef>
+        {{ "pages.jobs.title" | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.title["translation.name" | translate] }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="location">
+      <mat-header-cell *matHeaderCellDef>
+        {{ "pages.jobs.location" | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.location["translation.name" | translate] }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="company">
+      <mat-header-cell *matHeaderCellDef>
+        {{ "pages.jobs.company" | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        {{ element.company["translation.name" | translate] }}
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="salary">
+      <mat-header-cell *matHeaderCellDef>
+        {{ "pages.jobs.salary" | translate }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{ element.salary }} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+
+  <mat-paginator
+    [length]="totalCount"
+    [pageSize]="take"
+    (page)="onPageChange($event)"
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+  ></mat-paginator>
+</div>

@@ -1,0 +1,14 @@
+.dark-theme-toggle {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark-theme-toggle:hover {
+  background-color: white;
+  color: black;
+}

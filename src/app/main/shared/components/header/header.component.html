@@ -1,0 +1,22 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" routerLink="/home">{{
+    "navigation.home" | translate
+  }}</a>
+  <a class="navbar-brand" routerLink="/about">{{
+    "navigation.about" | translate
+  }}</a>
+  <a class="navbar-brand" routerLink="/jobs">{{
+    "navigation.jobs" | translate
+  }}</a>
+
+  <button
+    mat-stroked-button
+    (click)="setLanguage(language() === 'ar' ? 'en' : 'ar')"
+  >
+    {{ "translation.language" | translate }}
+  </button>
+
+  <mat-icon (click)="toggleDarkMode()" class="dark-theme-toggle">{{
+    darkMode() ? "light_mode" : "dark_mode"
+  }}</mat-icon>
+</nav>

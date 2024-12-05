@@ -1,12 +1,26 @@
 @use "@angular/material" as mat;
-@use "./app-theme.scss";
+@use "../public/styles/theme.scss";
 
 html,
 body {
-  @include mat.all-component-themes(app-theme.$light-theme);
   height: 100%;
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.light-theme-arabic {
+  @include mat.all-component-themes(theme.$light-theme-arabic);
+}
+
+.light-theme-english {
+  @include mat.all-component-themes(theme.$light-theme-english);
+}
+
+.dark-theme-arabic {
+  @include mat.all-component-themes(theme.$dark-theme-arabic);
+}
+
+.dark-theme-english {
+  @include mat.all-component-themes(theme.$dark-theme-english);
 }
