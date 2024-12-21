@@ -24,6 +24,15 @@
     "language": "العربية",
     "name": "nameEn"
   },
+  "paginator": {
+    "firstPage": "First page",
+    "itemsPerPage": "Items per page:",
+    "lastPage": "Last page",
+    "nextPage": "Next page",
+    "previousPage": "Previous page",
+    "page1of1": "Page 1 of 1",
+    "pageOf": "Page {{page}} of {{amountPages}}"
+  },
   "pages": {
     "jobs": {
       "title": "Title",

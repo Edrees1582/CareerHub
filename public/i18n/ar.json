@@ -24,6 +24,15 @@
     "language": "English",
     "name": "nameAr"
   },
+  "paginator": {
+    "firstPage": "الصفحة الأولى",
+    "itemsPerPage": "عدد العناصر في الصفحة:",
+    "lastPage": "الصفحة الأخيرة",
+    "nextPage": "الصفحة التالية",
+    "previousPage": "الصفحة السابقة",
+    "page1of1": "الصفحة 1 من 1",
+    "pageOf": "الصفحة {{page}} من {{amountPages}}"
+  },
   "pages": {
     "jobs": {
       "title": "العنوان",

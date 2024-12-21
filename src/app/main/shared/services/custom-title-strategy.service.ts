@@ -5,7 +5,7 @@ import { RouterStateSnapshot, TitleStrategy } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
-export class CustomTitleStrategy extends TitleStrategy {
+export class CustomTitleStrategyService extends TitleStrategy {
   title = inject(Title);
   translateService = inject(TranslateService);
 

@@ -16,7 +16,9 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
-import { CustomTitleStrategy } from '../app/main/shared/services/custom-title-strategy';
+import { CustomTitleStrategyService } from './main/shared/services/custom-title-strategy.service';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { CustomPaginatorIntlService } from './main/shared/services/custom-paginator-intl.service';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient
@@ -40,7 +42,11 @@ export const appConfig: ApplicationConfig = {
     ]),
     {
       provide: TitleStrategy,
-      useClass: CustomTitleStrategy,
+      useClass: CustomTitleStrategyService,
+    },
+    {
+      provide: MatPaginatorIntl,
+      useClass: CustomPaginatorIntlService,
     },
   ],
 };
