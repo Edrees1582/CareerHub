@@ -16,7 +16,7 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
-import { CustomTitleStrategy } from './custom-title-strategy';
+import { CustomTitleStrategy } from '../app/main/shared/services/custom-title-strategy';
 
 const httpLoaderFactory: (http: HttpClient) => TranslateHttpLoader = (
   http: HttpClient

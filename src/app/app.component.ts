@@ -17,7 +17,6 @@ import {
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [RouterOutlet, MatMenuModule, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

@@ -9,11 +9,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { takeUntil } from 'rxjs';
 
 @Component({
-  selector: 'app-jobs-grid',
-  standalone: true,
-  imports: [MatTableModule, MatPaginatorModule, TranslateModule],
-  templateUrl: './jobs-grid.component.html',
-  styleUrl: './jobs-grid.component.scss',
+    selector: 'app-jobs-grid',
+    imports: [MatTableModule, MatPaginatorModule, TranslateModule],
+    templateUrl: './jobs-grid.component.html',
+    styleUrl: './jobs-grid.component.scss'
 })
 export class JobsGridComponent extends BaseComponent implements OnInit {
   private _jobService = inject(JobService);

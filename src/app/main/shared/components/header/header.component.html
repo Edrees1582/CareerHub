@@ -9,14 +9,13 @@
     "navigation.jobs" | translate
   }}</a>
 
-  <button
-    mat-stroked-button
-    (click)="setLanguage(language() === 'ar' ? 'en' : 'ar')"
-  >
+  <button mat-stroked-button (click)="systemService.setLanguage()">
     {{ "translation.language" | translate }}
   </button>
 
-  <mat-icon (click)="toggleDarkMode()" class="dark-theme-toggle">{{
-    darkMode() ? "light_mode" : "dark_mode"
-  }}</mat-icon>
+  <mat-icon
+    (click)="systemService.toggleDarkMode()"
+    class="dark-theme-toggle"
+    >{{ systemService.darkMode() ? "light_mode" : "dark_mode" }}</mat-icon
+  >
 </nav>

@@ -4,10 +4,9 @@ import { BaseComponent } from '../../shared/components/base/base.component';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'app-home',
-  standalone: true,
-  imports: [MatButtonModule],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+    selector: 'app-home',
+    imports: [MatButtonModule],
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export default class HomeComponent extends BaseComponent {}

@@ -11,21 +11,22 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [
     MatMenuModule,
     RouterLink,
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
-    TranslateModule
+    TranslateModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent extends BaseComponent {
   languages = this.translateService.getLangs();
-  filteredLanguages = this.languages.filter((lang) => lang !== this.translateService.currentLang);
+  filteredLanguages = this.languages.filter(
+    (lang) => lang !== this.translateService.currentLang
+  );
 
   constructor() {
     super();
